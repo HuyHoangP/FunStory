@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer"
+    android:background="#97E5EF"
+    android:orientation="vertical"
+    android:padding="0dp">
+    <LinearLayout
+        android:id="@+id/ln_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <include layout="@layout/actionbar_menu"
+            android:id="@+id/include_actionbar"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_list_story"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/item_story"/>
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:padding="20dp"
+            android:fontFamily="sans-serif"
+            android:text="@string/txt_story_title"/>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="300dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp">
+                <TextView
+                    android:id="@+id/tv_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:justificationMode="inter_word"
+                    android:textSize="20sp"
+                    android:padding="20dp"
+                    android:fontFamily="sans-serif"
+                    android:text="@string/txt_content"/>
+            </LinearLayout>
+        </ScrollView>
+        <Button
+            android:id="@+id/bt_save1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:text="SAVE TO DATA STORAGE"/>
+
+    </LinearLayout>
+    <include
+        android:id="@+id/include_drawer"
+        layout="@layout/item_start_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start">
+    </include>
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
